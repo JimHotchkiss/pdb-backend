@@ -1,4 +1,5 @@
 class Api::V1::FavoritesController < ApplicationController
+    require 'pry'
 
     def index 
         favorites = Favorite.all 
@@ -6,6 +7,15 @@ class Api::V1::FavoritesController < ApplicationController
             include: [:user]
         }
         render json: FavoriteSerializer.new(favorites, option)
+    end 
+
+    def create
+        favorites = Favorite.new(favorite_params)
+        if favorites.save 
+            render json: FavoriteSerializer.new(favorites)
+        else 
+            render json: favorites.errors.full_messages
+        end 
     end 
 
     private 

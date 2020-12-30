@@ -9,7 +9,6 @@ class Api::V1::UsersController < ApplicationController
     end 
 
     def create(user_params)
-        binding.pry
     end 
 
     private 
