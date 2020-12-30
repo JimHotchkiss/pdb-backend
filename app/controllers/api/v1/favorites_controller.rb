@@ -7,4 +7,10 @@ class Api::V1::FavoritesController < ApplicationController
         }
         render json: FavoriteSerializer.new(favorites, option)
     end 
+
+    private 
+    
+    def favorite_params 
+        params.require(:favorite).permit(:title, :date_published, :description, :image, :provider, :url)
+    end 
 end
