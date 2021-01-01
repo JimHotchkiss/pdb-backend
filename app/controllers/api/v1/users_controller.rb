@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    wrap_parameters :user, include: [:id,:username, :password, :password_confirmation]
+    # wrap_parameters :user, include: [:id,:username, :password, :password_confirmation]
 
     def index 
         users = User.all 
@@ -10,6 +10,7 @@ class Api::V1::UsersController < ApplicationController
     end 
 
     def create
+        binding.pry
         @user = User.new(user_params)
         if @user.save 
             login_user
