@@ -1,7 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  reference: MyString
+  title: MyString
+  user_id: 1
+  date_published: MyString
+  description: MyString
+  image: MyString
+  provider: MyString
+  url: MyString
 
 two:
-  reference: MyString
+  title: MyString
+  user_id: 1
+  date_published: MyString
+  description: MyString
+  image: MyString
+  provider: MyString
+  url: MyString
