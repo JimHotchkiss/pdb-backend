@@ -12,6 +12,7 @@ class Api::V1::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save 
+            login_user
             render json: UserSerializer.new(@user)
         else 
             render json: @user.errors
@@ -19,6 +20,10 @@ class Api::V1::UsersController < ApplicationController
     end 
 
     private 
+
+    def login_user 
+        session[:user_Id] = @user.id
+    end 
     
     def user_params
         params.require(:user).permit(:id, :username, :password, :password_confirmation)
