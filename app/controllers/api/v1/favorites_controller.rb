@@ -10,7 +10,6 @@ class Api::V1::FavoritesController < ApplicationController
     end 
 
     def create
-        binding.pry
         favorites = Favorite.new(favorite_params)
         if favorites.save 
             render json: FavoriteSerializer.new(favorites)
