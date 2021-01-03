@@ -4,7 +4,7 @@ class Api::V1::SessionsController < ApplicationController
         @user = User.find_by(username: login_params[:username])
         if @user && @user.authenticate(login_params[:password])
             session[:user_id] = @user.id
-            render json: {user: @user, user_id: session[:user_id]} 
+            render json: {user: UserSerializer.new(@user), user_id: session[:user_id]} 
         else 
             render json: {
                 error: "Invalid login information"
@@ -12,11 +12,13 @@ class Api::V1::SessionsController < ApplicationController
         end 
     end 
 
-    def current_user
-        binding.pry
-        @user = User.find_by(id: session[:user_id])
-        render json: @user
+    def destroy 
+        session.clear
+        render json: {
+          notice: "Successfully logged out"
+        }
     end 
+
 
         private 
 
