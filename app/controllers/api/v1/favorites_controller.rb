@@ -1,7 +1,6 @@
 class Api::V1:: FavoritesController < ApplicationController
 
     def index 
-        # binding.pry
         @favorites = Favorite.all
         render json: @favorites
     end
