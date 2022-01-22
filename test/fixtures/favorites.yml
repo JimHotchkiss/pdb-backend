@@ -2,18 +2,12 @@
 
 one:
   title: MyString
-  user_id: 1
-  date_published: MyString
-  description: MyString
-  image: MyString
-  provider: MyString
-  url: MyString
+  imageUrl: MyString
+  description: MyText
+  storyUrl: MyString
 
 two:
   title: MyString
-  user_id: 1
-  date_published: MyString
-  description: MyString
-  image: MyString
-  provider: MyString
-  url: MyString
+  imageUrl: MyString
+  description: MyText
+  storyUrl: MyString
