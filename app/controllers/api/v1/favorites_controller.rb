@@ -17,6 +17,7 @@ class Api::V1:: FavoritesController < ApplicationController
     
     private 
     def favorite_params
-        params.require(:favorite).permit(:description, :datePublished, :title, :imageUrl, :storyUrl)
+        params.require(:favorite).permit(:description, :publishedAt, :title, :urlToImage, :url)
     end
 end
+

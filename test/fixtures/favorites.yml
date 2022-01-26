@@ -2,12 +2,14 @@
 
 one:
   title: MyString
-  imageUrl: MyString
-  description: MyText
-  storyUrl: MyString
+  description: MyString
+  urlToImage: MyString
+  publishedAt: MyString
+  url: MyString
 
 two:
   title: MyString
-  imageUrl: MyString
-  description: MyText
-  storyUrl: MyString
+  description: MyString
+  urlToImage: MyString
+  publishedAt: MyString
+  url: MyString
