@@ -1,2 +1,2 @@
-class Favorite < ApplicationRecord::Base
+class Favorite < ApplicationRecord
 end
