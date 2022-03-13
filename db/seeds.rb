@@ -8,5 +8,5 @@
 
 #    movies = User.create([{ name: 'test 1' }, { name: 'test 1' }, {name: 'test 3'}])
 
-   favorites = Favorite.create([{ title: 'test 1' }, { title: 'test 2' }, {title: 'test 3'}])
+   # favorites = Favorite.create([{ title: 'test 1' }, { title: 'test 2' }, {title: 'test 3'}])
 
