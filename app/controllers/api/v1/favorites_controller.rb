@@ -6,11 +6,16 @@ class Api::V1:: FavoritesController < ApplicationController
     end
 
     def create
-        @favorite = Favorite.new(favorite_params)
-        if @favorite.save
-            render json: @favorite
-        else
-            render json: {error: "Favorite did not save"}
+        # binding.pry
+        if Favorite.exists?('description': favorite_params['description'])
+            render json: {error: "This story has already been saved"}
+        else 
+            @favorite = Favorite.new(favorite_params)
+            if @favorite.save
+                render json: @favorite
+            else
+                render json: {error: "Favorite did not save"}
+            end
         end
     end 
     
