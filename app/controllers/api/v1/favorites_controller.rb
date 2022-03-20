@@ -6,8 +6,7 @@ class Api::V1:: FavoritesController < ApplicationController
     end
 
     def create
-        # binding.pry
-        if Favorite.exists?('description': favorite_params['description'])
+        if Favorite.favorite_search(favorite_params)
             render json: {error: "This story has already been saved"}
         else 
             @favorite = Favorite.new(favorite_params)
